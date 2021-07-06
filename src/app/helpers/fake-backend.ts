@@ -4,7 +4,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
 import {User} from "../models/user";
 // array in local storage for registered users
-const usersKey = 'angular-10-registration-login-example-users';
+const usersKey = 'angular-12-registration-login';
 let users:any = JSON.parse(<string>localStorage.getItem(usersKey)) || [];
 
 @Injectable()
