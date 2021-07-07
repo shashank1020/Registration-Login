@@ -9,6 +9,7 @@ import {fakeBackendProvider} from "./helpers/fake-backend";
 import { HomeComponent } from './home/home.component';
 import {CommonModule} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -23,6 +24,7 @@ import {BrowserModule} from "@angular/platform-browser";
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
