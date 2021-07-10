@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
-import {User} from "../models/user";
+import {User} from "../models";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {map} from "rxjs/operators";
+
 
 @Injectable({
   providedIn: 'root'
@@ -45,11 +46,11 @@ export class AccountService {
     return this.http.get<User[]>(`${environment.apiUrl}/users`)
   }
 
-  getById(id: number) {
+  getById(id: string) {
     return this.http.get<User>(`${environment.apiUrl}/users/${id}`)
   }
 
-  update (id: number, params:User){
+  update (id: string, params:User){
     return this.http.put(`${environment.apiUrl}/users/${id}`, params)
       .pipe(map(x => {
         if (id === this.userValue.id) {
@@ -61,7 +62,7 @@ export class AccountService {
       }))
   }
 
-  delete(id: number) {
+  delete(id: string) {
     return this.http.delete(`${environment.apiUrl}/user/${id}`)
       .pipe(map(x => {
         if (id == this.userValue.id) {

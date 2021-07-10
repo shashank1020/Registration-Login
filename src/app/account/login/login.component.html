@@ -2,7 +2,7 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <img class="mb-4" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72"
          height="57">
-    <h1 class="h3 mb-3 fw-normal">Login Now</h1>
+    <h1 class="h1 mb-3 fw-bold">Login Now</h1>
     <div class="form-floating">
       <input id="floatingInput" type="email" formControlName="username" class="form-control"
              [ngClass]="{ 'is-invalid': submitted && f.username?.errors }" placeholder="name@example.com"/>
@@ -26,10 +26,11 @@
       Login
     </button>
     <label>Don't have account yet? </label>
-    <button class="w-100 btn btn-lg btn-link my-2" type="submit" routerLink="../register">Register Now</button>
+    <button class="w-100 btn btn-lg btn-link mt-2" style="margin-bottom: 100px" type="submit" routerLink="../register">Register Now</button>
+    <label class="text-muted mb-2">Contacts to my social</label>
     <div class="d-flex justify-content-center">
       <div class="row align-items-center">
-        <a href="https://github.com/shashank1020/Registration-Login/tree/master" target="_blank"
+        <a href="https://github.com/shashank1020/Registration-Login/" target="_blank"
            rel="noopener noreferrer" class="bi bi-github col-auto"></a>
         <a href="https://www.linkedin.com/in/shashank-maurya-15617b179" target="_blank" rel="noopener noreferrer"
            class="bi bi-linkedin col-auto"></a>
@@ -41,7 +42,6 @@
            }"
           class="col-auto" title="copy mail" (click)="copy()"></a>
       </div>
-
     </div>
 
   </form>

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, materialize, dematerialize } from 'rxjs/operators';
-import {User} from "../models/user";
+import {User} from "../models";
 // array in local storage for registered users
-const usersKey = 'angular-12-registration-login';
+const usersKey = 'All-Accounts';
 let users:any = JSON.parse(<string>localStorage.getItem(usersKey)) || [];
 
 @Injectable()
@@ -125,7 +125,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         function idFromUrl() {
             const urlParts = url.split('/');
-            return parseInt(urlParts[urlParts.length - 1]);
+            return urlParts[urlParts.length - 1];
         }
     }
 }

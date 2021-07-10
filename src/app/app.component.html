@@ -4,11 +4,11 @@
   <div class="navbar-nav">
     <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
-    <a class="d-flex align-content-end nav-item nav-link" (click)="logout()">Logout</a>
+    <a class="d-flex nav-item nav-link" (click)="logout()">Logout</a>
   </div>
 </nav>
 
 <!-- main app container -->
-<div class="app-container" [ngClass]="{ 'bg-light': user }">
+<div class="container" [ngClass]="{ 'bg-light': user }" style=" background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%)">
   <router-outlet></router-outlet>
 </div>

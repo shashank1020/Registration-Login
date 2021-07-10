@@ -11,7 +11,7 @@ import {first} from "rxjs/operators";
 })
 export class AddEditComponent implements OnInit {
   form!: FormGroup
-  id!: number
+  id!: string
   isAddMode!: boolean
   loading = false
   submitted = false
@@ -25,7 +25,7 @@ export class AddEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id']
+    this.id = <string>this.route.snapshot.params['id']
     this.isAddMode = !this.id
 
     const passwordValidators = [Validators.minLength(6)]

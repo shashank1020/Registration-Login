@@ -1,8 +1,7 @@
 <div class="card">
-  <div class="card-header text-center">
-    <h3 class="display-5 fw-bold">Create an account</h3>
+  <div class="card-header text-center mt-3">
+    <h3 class="fs-1 fw-bold">Create an account</h3>
   </div>
-<!--  <h4 class="card-header">Register</h4>-->
   <div class="card-body">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="row mb-2">
@@ -15,8 +14,8 @@
           </div>
         </div>
         <div class="form-group col">
-          <label id="lastName" for="lastName">Last Name</label>
-          <input type="text" formControlName="lastName" class="form-control"
+          <label id="lastNam3" for="lastName">Last Name</label>
+          <input id="lastName" type="text" formControlName="lastName" class="form-control"
                  [ngClass]="{ 'is-invalid': submitted && f.lastName?.errors }"/>
           <div *ngIf="submitted && f.lastName?.errors" class="invalid-feedback">
             <div *ngIf="f.lastName?.errors?.required">Last Name is required</div>
